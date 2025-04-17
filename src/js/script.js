@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const galleryImages = document.querySelectorAll('.card-galeria img');
-
   galleryImages.forEach((img, index) => {
     img.addEventListener('click', () => {
       openLightbox(index);
@@ -51,6 +50,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     lightbox.addEventListener('click', (e) => {
       if (e.target === lightbox) lightbox.remove();
+    });
+  }
+
+  const form = document.getElementById('whatsapp-form');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const mensagem = document.getElementById('mensagem').value;
+
+      const texto = `Olá! Meu nome é ${nome}%0AEmail: ${email}%0AMensagem: ${mensagem}`;
+      const url = `https://wa.me/5514981216234?text=${texto}`;
+      window.open(url, '_blank');
     });
   }
 });

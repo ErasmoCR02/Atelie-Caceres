@@ -33,13 +33,15 @@
   </header>
 
   <main class="contato">
-    <h1 style="text-align:center">Seu chaveiro exclusivo, feito à mão com amor.</h1>
-    <form>
-      <input type="text" placeholder="Seu nome" required />
-      <input type="email" placeholder="Seu e-mail" required />
-      <textarea placeholder="Como deseja personalizar o seu chaveiro?" rows="10" required></textarea>
-      <button type="submit">Enviar Pedido</button>
-    </form>
+    <section class="painel">
+      <h1>Seu chaveiro exclusivo, feito à mão com amor.</h1>
+      <form id="whatsapp-form">
+        <input type="text" id="nome" placeholder="Seu nome" required />
+        <input type="email" id="email" placeholder="Seu e-mail" required />
+        <textarea id="mensagem" placeholder="Como deseja personalizar o seu chaveiro?" rows="5" required></textarea>
+        <button type="submit">Enviar Pedido</button>
+      </form>
+    </section>
   </main>
 
   <footer>
@@ -53,7 +55,7 @@
 
   <a href="https://wa.me/5514981216234" class="whatsapp-btn" target="_blank">
     <i class="fab fa-whatsapp"></i>
-  </a>  
+  </a>
   <script src="src/js/script.js"></script>
 </body>
 </html>
