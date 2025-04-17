@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const texto = `Olá! Meu nome é ${nome}%0AEmail: ${email}%0AMensagem: ${mensagem}`;
       const url = `https://wa.me/5514981216234?text=${texto}`;
-      window.open(url, '_blank');
+      window.location.href = url;
     });
   }
 });
