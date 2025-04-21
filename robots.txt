@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://erasmocr02.github.io/Atelie-Caceres/sitemap.xml

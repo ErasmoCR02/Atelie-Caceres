@@ -55,15 +55,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const form = document.getElementById('whatsapp-form');
   if (form) {
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
-      const nome = document.getElementById('nome').value;
-      const email = document.getElementById('email').value;
-      const mensagem = document.getElementById('mensagem').value;
 
-      const texto = `Olá! Meu nome é ${nome}%0AEmail: ${email}%0AMensagem: ${mensagem}`;
+      const nome = document.getElementById('nome');
+      const email = document.getElementById('email');
+      const mensagem = document.getElementById('mensagem');
+
+      document.querySelectorAll('.erro').forEach(el => el.remove());
+
+      let valid = true;
+
+      if (!nome.value.trim()) {
+        mostrarErro(nome, 'Campo obrigatório');
+        valid = false;
+      }
+
+      if (!mensagem.value.trim()) {
+        mostrarErro(mensagem, 'Campo obrigatório');
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      const texto = `Olá! Meu nome é ${nome.value}%0AEmail: ${email.value}%0AMensagem: ${mensagem.value}`;
       const url = `https://wa.me/5514981216234?text=${texto}`;
       window.location.href = url;
     });
+
+    function mostrarErro(input, mensagem) {
+      let erro = input.parentElement.querySelector('.erro');
+      if (!erro) {
+        erro = document.createElement('span');
+        erro.classList.add('erro');
+        erro.style.color = 'red';
+        erro.style.fontSize = '0.9rem';
+        erro.style.marginTop = '4px';
+        erro.textContent = mensagem;
+        input.insertAdjacentElement('afterend', erro);
+      }
+    }
   }
 });

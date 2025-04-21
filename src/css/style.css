@@ -148,6 +148,8 @@ footer a {
   background-color: #25d366;
   color: white;
   padding: 1rem;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
   font-size: 3rem;
   text-decoration: none;
@@ -208,6 +210,10 @@ footer a {
 
 .card-galeria:hover img {
   transform: scale(1.05);
+}
+
+.contato .painel h1 {
+  text-align: center;
 }
 
 .contato form {
